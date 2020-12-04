@@ -1,0 +1,12 @@
+.home-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 60px;
+}
+.card{
+    margin: 12px;
+}
+.card-img, .card-img-top{
+    height: 250px;
+}
