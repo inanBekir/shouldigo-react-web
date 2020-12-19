@@ -1,12 +1,81 @@
 .home-content{
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    margin-top: 60px;
+    margin-top: 4rem;
 }
-.card{
-    margin: 12px;
+.card-content{
+    width: 95%;
 }
-.card-img, .card-img-top{
-    height: 250px;
+.head-text{
+    color:#FAFAFA;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0;
+    display: flex;
+    margin-right: 0.2rem;
+}
+.index-text{
+    color:#FE5D26;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+.text-content{
+    display: flex;
+    align-items: flex-end;
+}
+.MuiCardHeader-title p{
+    color:#FE5D26;
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+.MuiCardHeader-subheader p{
+    color:rgba(255, 165, 0, 0.6);
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 0.8rem;
+    margin-bottom: 0;
+}
+.card-icons-content-col {
+    display: flex;
+    justify-content: space-between;
+}
+.card-icons-content-row{
+    display: flex;
+}
+.card-left-text{
+    color:#FE5D26;
+    font-weight: 500;
+    margin-left: 0.3rem;
+}
+.card-right-text{
+    color:#FE5D26;
+    font-weight: 500;
+    margin-right: 0.3rem;
+}
+.card-icons-content-row .MuiSvgIcon-root{
+    color:#FAFAFA;
+}
+.MuiCardActions-root .MuiSvgIcon-root{
+    color:#FAFAFA;
+}
+.MuiCardHeader-action .MuiSvgIcon-root{
+    color:#FAFAFA;
+}
+.slick-slide .makeStyles-media-2{
+    background-size: 100% 100%;
+    margin-right: 0.2rem;
+    margin-left: 0.2rem;
+    border-radius: 0.5rem;
+}
+.MuiCardActions-root{
+    justify-content: space-between;
+}
+.slick-next:focus, .slick-next:hover, .slick-prev:focus, .slick-prev:hover {
+    background-color: #1B2432;
+    color: #FE5D26;
+    height: 100%;
+    border-radius: 0.5rem;
 }

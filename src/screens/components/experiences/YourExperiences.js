@@ -8,7 +8,7 @@ function YourExperiences() {
     const history = useHistory();
     const [experiences, setExperiences] = useState([]);
 
-    const goShow = (param) => history.push('show',{param: param});
+    const goExperience = (param) => history.push('experience',{param: param});
 
     useEffect(() => {
         db.collection('Experiences').get()
@@ -40,7 +40,7 @@ function YourExperiences() {
                 Some quick example text to build on the card title and make up the bulk of
                 the card's content.
                 </Card.Text>
-                <Button variant="primary" onClick={() => goShow(item.key)}>Go somewhere</Button>
+                <Button variant="primary" onClick={() => goExperience(item.key)}>Go somewhere</Button>
             </Card.Body>
             </Card>
         ));

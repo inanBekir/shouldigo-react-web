@@ -1,0 +1,115 @@
+.conta-comments{
+    margin-top: 6rem;
+}
+.jumbotron{
+    background-color: #000000;
+    padding: 0rem 4rem;
+}
+.comment-top-content{
+    display: flex;
+    padding: 1rem .5rem;
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+    background-color: #60656F;
+    min-height: 7rem;
+}
+.comment-bottom-content{
+    display: flex;
+    padding: 1rem .5rem;
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    background-color: #222222;
+    min-height: 7rem;
+}
+.comment-bottom-content p:first-child{
+    padding: 0;
+    margin: 0; 
+    color:#FAFAFA;
+    text-transform: capitalize;
+    font-weight: 300;
+    font-size: 1.1rem;
+}
+.comment-top-content img {
+    width: 5rem;
+}
+.name-date-content{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-left: .6rem;
+}
+.name-date-content p:first-child{
+  padding: 0;
+  margin: 0; 
+  color:#FE5D26;
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+.name-date-content p:last-child{
+  padding: 0;
+  margin: 0; 
+  color: rgba(255, 165, 0, 0.6);
+}
+.comment-input-div{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1060;
+    background-color: #222222;
+}
+.comment-input-div .MuiFormControl-root {
+    width: 98%;
+    background: #000;
+    border-radius: 1rem;
+}
+.comment-input-div .MuiInputBase-root{
+    color:#FAFAFA;
+}
+.comment-input-div .MuiFormLabel-root{
+    color:rgba(255, 255, 255, 0.54);
+}
+.comment-input-div .MuiFormLabel-root.Mui-focused{
+    color:red
+}
+.bottom-input-div{
+    display: flex;
+}
+.form-div{
+    width: 92%;
+}
+.add-comment-btn {
+    width: 3.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add-comment-btn .MuiIconButton-root{
+    background: #FE5D26;
+    height: 73%;
+    width: 100%;
+}
+.add-comment-btn .MuiIconButton-root:hover{
+    background: #ff4000;
+    height: 73%;
+    width: 100%;
+}
+.load-more-btn-div {
+    margin-bottom: 5rem;
+    justify-content: center;
+    display: flex;
+}
+.load-more-btn-div p {
+    color: #FE5D26;
+    font-weight: 700;
+    text-decoration: underline;
+    margin: 0;
+    padding: 0;
+}
+.load-more-btn-div p:hover {
+    color: #ff4000;
+    font-weight: 700;
+    text-decoration: underline;
+    margin: 0;
+    padding: 0;
+}

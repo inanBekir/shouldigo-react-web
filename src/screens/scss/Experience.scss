@@ -1,0 +1,220 @@
+.carousel-image{
+    height: 30rem;
+    opacity: 1;
+}
+.show-content{
+    background-color: #222222;
+}
+.left-content{
+    display: flex;
+}
+.top-content {
+    display: flex;
+    justify-content: space-between;
+}
+.comment-button-text {
+    font-weight: 700;
+    margin: 0;
+    font-size: 1.3rem;
+    margin-left: 0.4rem;
+}
+.makeStyles-root-1 .MuiAppBar-colorDefault{
+    background-color: #212121;
+}
+.tab-content{
+    margin-top: 1.5rem;
+}
+.MuiSvgIcon-root{
+    color: unset;
+}
+.MuiTabs-flexContainer .MuiTab-textColorSecondary{
+    color:rgba(180, 173, 173, 0.54);
+}
+.MuiBox-root .MuiTypography-root{
+    color:#FAFAFA;
+}
+.MuiTabs-root{
+    background-color: #000000;
+}
+.MuiBox-root {
+    background: #222222;
+    height: 15rem;
+    overflow: auto;
+}
+.rate-text{
+    color:#FE5D26;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+}
+.rate-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.MuiRating-root .MuiRating-iconEmpty{
+    color:rgba(180, 173, 173, 0.54);
+}
+.rating-content {
+    justify-content: flex-end;
+    display: flex;
+}
+.times-rated-text{
+    color:#FE5D26;
+    font-size: 0.7rem;
+    margin: 0;
+    padding: 0;
+}
+.click-rate-text{
+    color:#FAFAFA;
+    font-size: 0.7rem;
+    text-decoration: underline;
+    margin: 0;
+    padding: 0;
+}
+.modal-content-rate{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:3rem;
+    flex-direction: column;
+    border-radius: 1rem;
+}
+.close-rate-text{
+    color:#FAFAFA;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+}
+.bottom-content img{
+    width: 3rem;
+}
+.bottom-content{
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:0.8rem;
+    border-top: 1px #FE5D26 solid;
+}
+.bottom-orange-text{
+    color:#FE5D26;
+    font-size: 0.9rem;
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 0.3rem;
+    padding-left: 0.3rem;
+}
+.bottom-white-text{
+    color:#FAFAFA;
+    font-size: 1rem;
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 0.3rem;
+    padding-left: 0.3rem;
+    font-weight: 700;
+}
+.voting-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 1rem;
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 5rem;
+    z-index: 2;
+    left: 3rem;
+}
+.voting-text1{
+    color:#FE5D26;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin:0;
+    padding: 0;
+    padding-right: 0.3rem;
+}
+.voting-text2-voting{
+    color:#FAFAFA;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: 200;
+    margin:0;
+    padding: 0.3rem;
+    background-color: #C5AFA4;
+    border-radius: .4rem;
+}
+.voting-text2-yes{
+    color:#FAFAFA;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: 200;
+    margin:0;
+    padding: 0.3rem;
+    background-color: #399E5A;
+}
+.voting-text2-no{
+    color:#FAFAFA;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: 200;
+    margin:0;
+    padding: 0.3rem;
+    background-color: #D80032;
+}
+.voting-text2{
+    color:#FAFAFA;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: 200;
+    margin:0;
+    padding: 0;
+    padding-left: 0.3rem;
+}
+.viewed-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 1rem;
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 5rem;
+    z-index: 2;
+    right: 3rem;
+}
+.viewed-content .MuiIconButton-root {
+    padding: 0;
+}
+.location-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 1rem;
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 25rem;
+    z-index: 2;
+    left: 3rem;
+}
+.chat-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 1rem;
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 25rem;
+    z-index: 2;
+    right: 3rem;
+}
+.chat-content .MuiIconButton-root {
+    padding: 0;
+}
+.rate-div .MuiRating-root{
+    color:#FE5D26;
+}
+.modal-content-rate .MuiRating-root{
+    color:#FE5D26;
+}

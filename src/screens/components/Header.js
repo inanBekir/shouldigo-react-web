@@ -3,17 +3,25 @@ import { auth } from '../../firebase/firebase.utils';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../screens/scss/Header.scss'
 import { Button, Navbar, Nav, NavDropdown, Form, FormControl, Image } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom'
+import { NavLink, useHistory } from 'react-router-dom'
+import PersonIcon from '@material-ui/icons/Person';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import AccessibilityNewIcon from '@material-ui/icons/AccessibilityNew';
 
 const navBarTransparent = {backgroundColor:'transparent'};
 const navBarColor = {backgroundColor:'rgba(2, 2, 2, 0.7)'};
 export default function Header(){
+    const history = useHistory();
     const [scrollPosition, setScrollPosition] = useState(0);
     const [currentUser, setCurrentUser] = useState('');
 
     const handleScroll = () => {
         const position = window.pageYOffset;
         setScrollPosition(position);
+    };
+
+    const logout = () => {
+        auth.signOut();
     };
 
     useEffect(() => {
@@ -32,7 +40,7 @@ export default function Header(){
         <Navbar style={scrollPosition >= 5 ? navBarColor : navBarTransparent} expand="lg">
         <Navbar.Brand href="/">
             <img
-                src="https://firebasestorage.googleapis.com/v0/b/shouldigo-e0dd0.appspot.com/o/site-main.png?alt=media&token=55c8236c-6088-4bf3-a898-5bbc11c96844"
+                src="https://firebasestorage.googleapis.com/v0/b/shouldigo-e0dd0.appspot.com/o/shouldigo-2.png?alt=media&token=42c64548-578c-4d71-9afd-597f6a4f45ff"
                 width="40"
                 height="40"
                 className="d-inline-block align-top"
@@ -47,13 +55,21 @@ export default function Header(){
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
             <Button variant="outline-success">Search</Button>
             </Form>
-            <NavLink className="btn btn-primary" to="/create">Create Experience</NavLink> 
-            <NavDropdown title={<Image src={currentUser.photoURL} roundedCircle />} id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Your Experiences</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+            <NavLink className="btn btn-outline-success" to="/create">Create Experience</NavLink> 
+            <NavDropdown title={currentUser ? <Image src={currentUser.photoURL} roundedCircle /> : null} id="basic-nav-dropdown">
+                <div className="logout-btn-div">
+                    <PersonIcon  />
+                    <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
+                </div>
+                <div className="logout-btn-div">
+                    <AccessibilityNewIcon  />
+                    <NavDropdown.Item href="#action/3.2">Your Experiences</NavDropdown.Item>
+                </div>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                <div className="logout-btn-div">
+                    <ExitToAppIcon  />
+                    <Button className="logout-btn" onClick={logout}>Logout</Button>
+                </div>
             </NavDropdown>
         </Navbar.Collapse>
         </Navbar>
