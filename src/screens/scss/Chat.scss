@@ -1,0 +1,49 @@
+.conta-chat{
+    margin-top: 6rem;
+}
+.rce-container-mlist .rce-mbox-right-notch {
+    fill: #FE5D26;
+}
+.rce-mbox.rce-mbox-right {
+    background-color: #FE5D26;
+}
+.rce-container-mlist .rce-mbox-left-notch {
+    fill: #FE5D26;
+}
+.rce-container-mbox .rce-mbox {
+    background-color: #FE5D26;
+}
+.rce-mbox-body{
+    display: flex;
+}
+.rce-mbox-body .rce-avatar-container.default {
+    width: 50px;
+    height: 50px;
+    border:1px solid;
+    border-radius: 2rem;
+}
+.rce-mbox-body .rce-mbox-text{
+    font-size: 17.6px;
+    font-weight: 500;
+}
+.conta-chat .rce-container-input{
+    background-color: transparent;
+}
+.rce-container-input .rce-input-textarea {
+    background-color: #000;
+    height: 50px;
+    padding: 15px 10px;
+    border-radius: .8rem;
+}
+.chat-input-div{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1060;
+    background-color: #222222;
+    left: 0;
+    padding: .5rem;
+}
+.rce-container-input .rce-input {
+    color:#FAFAFA;
+}

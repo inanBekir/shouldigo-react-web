@@ -9,6 +9,7 @@ import Loading from '../components/Loading';
 import Experience from '../components/experiences/Experience';
 import Profile from '../Auth/Profile';
 import Comments from '../components/experiences/Comments';
+import Chat from '../components/experiences/Chat'
 
 function AuthLoading() {
     const [currentUser, setCurrentUser] = useState('');
@@ -52,6 +53,7 @@ function AuthLoading() {
                                 <Route path={"/experience"} component={Experience}/>
                                 <Route path={"/profile"} component={Profile}/>
                                 <Route path={"/comments"} component={Comments}/>
+                                <Route path={"/chat"} component={Chat}/>
                             </React.Fragment>
                         }
                     </React.Fragment>

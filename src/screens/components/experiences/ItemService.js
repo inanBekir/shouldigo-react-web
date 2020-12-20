@@ -12,6 +12,7 @@ import {
   } from '../../redux/reducer';
 import { db } from '../../../firebase/firebase.utils'
 
+const messagesCollection = db.collection('Messages');
 const profileCollection = db.collection('Profiles');
 const commentCollection = db.collection('Comments');
 const experiencesCollection = db.collection('Experiences');
@@ -141,4 +142,17 @@ const experienceLikesCollection = db.collection('Experience_likes');
             });
         }
       });
+  };
+
+  export const AddMessage = (messageId, text, experienceId, userId, avatar) => {
+    messagesCollection.add({
+      _id: messageId,
+      text: text,
+      createdAt: new Date(),
+      experienceId: experienceId,
+      user: {
+        _id: userId,
+        avatar: avatar,
+      },
+    });
   };

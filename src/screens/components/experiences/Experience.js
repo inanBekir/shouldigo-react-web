@@ -208,6 +208,7 @@ function Experience(props) {
 
     const goProfile = (param) => history.push('profile',{param: param});
     const goComments = (param) => history.push('comments',{param: param});
+    const goChat = (param) => history.push('chat',{param: param});
 
     useEffect(() => {
         GetExperience(dispatch, id);
@@ -268,7 +269,7 @@ function Experience(props) {
         </div>
         <div className="chat-content">
               <Tooltip title="Chat">
-                  <IconButton onClick={() => { handleOpen() }} aria-label="chat">
+                  <IconButton onClick={() => { goChat(id) }} aria-label="chat">
                     <ChatIcon style={{ color: orange[900] }} fontSize="large" />
                     <p className="voting-text2">Chat</p>
                   </IconButton>
