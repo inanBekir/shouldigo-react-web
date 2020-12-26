@@ -26,6 +26,7 @@ import Tooltip from '@material-ui/core/Tooltip';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import { UpdateExperience } from './components/experiences/ItemService';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -59,9 +60,8 @@ function Home() {
     const [indexNumber, setIndexNumber] = useState(0);
     const large = useMediaQuery('(max-width:991px)');
     const medium = useMediaQuery('(max-width:767px)');
-    const phone = useMediaQuery('(max-width:479px)');
+    const xLarge = useMediaQuery('(max-width:1200px)');
 
-    const goExperience = (param) => history.push('experience',{param: param});
 
     function SliderNextArrow(props) {
       const { className, style, onClick } = props;
@@ -81,7 +81,7 @@ function Home() {
       );
     }
    
-    if (phone) {
+    if (medium) {
       var settings = {
         dots: false,
         slidesToShow: 1,
@@ -89,7 +89,7 @@ function Home() {
         nextArrow: <SliderNextArrow />,
         prevArrow: <SliderPrevArrow />,
       };
-    } else if (medium) {
+    } else if (large) {
       var settings = {
         dots: false,
         slidesToShow: 2,
@@ -97,7 +97,7 @@ function Home() {
         nextArrow: <SliderNextArrow />,
         prevArrow: <SliderPrevArrow />,
       };
-    } else if (large) {
+    } else if (xLarge) {
       var settings = {
         dots: false,
         slidesToShow: 3,
@@ -134,6 +134,11 @@ function Home() {
       })
         // eslint-disable-next-line react-hooks/exhaustive-deps
       }, []);
+
+      const SaveCountGoExperience = (item) => {
+        UpdateExperience(item);
+        history.push('experience',{param: item.key})
+      };
     
   return (
     <div className="home-content">
@@ -216,7 +221,7 @@ function Home() {
               </Tooltip>
             </div>
             <Tooltip title="Click to view">
-              <IconButton onClick={() => { goExperience(item.key) }} aria-label="view">
+              <IconButton onClick={() => { SaveCountGoExperience(item) }} aria-label="view">
                 <ArrowForwardIcon fontSize="large" />
               </IconButton>
             </Tooltip>

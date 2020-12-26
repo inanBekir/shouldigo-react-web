@@ -7,14 +7,21 @@ import { NavLink, useHistory } from 'react-router-dom'
 import PersonIcon from '@material-ui/icons/Person';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import AccessibilityNewIcon from '@material-ui/icons/AccessibilityNew';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
-const navBarTransparent = {backgroundColor:'transparent'};
+var navBarTransparent;
 const navBarColor = {backgroundColor:'rgba(2, 2, 2, 0.7)'};
 export default function Header(){
     const history = useHistory();
     const [scrollPosition, setScrollPosition] = useState(0);
     const [currentUser, setCurrentUser] = useState('');
+    const large = useMediaQuery('(max-width:991px)');
 
+    if (large) {
+        navBarTransparent = {backgroundColor:'rgba(2, 2, 2, 0.7)'};
+    }else{
+        navBarTransparent = {backgroundColor:'transparent'};
+    }
     const handleScroll = () => {
         const position = window.pageYOffset;
         setScrollPosition(position);
@@ -22,6 +29,7 @@ export default function Header(){
 
     const logout = () => {
         auth.signOut();
+        window.location.href = 'http://localhost:3000/';
     };
 
     useEffect(() => {
@@ -56,14 +64,14 @@ export default function Header(){
             <Button variant="outline-success">Search</Button>
             </Form>
             <NavLink className="btn btn-outline-success" to="/create">Create Experience</NavLink> 
-            <NavDropdown title={currentUser ? <Image src={currentUser.photoURL} roundedCircle /> : null} id="basic-nav-dropdown">
+            <NavDropdown title={currentUser ? <Image src={currentUser.photoURL} roundedCircle /> : 'b'} id="basic-nav-dropdown">
                 <div className="logout-btn-div">
                     <PersonIcon  />
                     <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
                 </div>
                 <div className="logout-btn-div">
                     <AccessibilityNewIcon  />
-                    <NavDropdown.Item href="#action/3.2">Your Experiences</NavDropdown.Item>
+                    <NavDropdown.Item href="/your-experiences">Your Experiences</NavDropdown.Item>
                 </div>
                 <NavDropdown.Divider />
                 <div className="logout-btn-div">

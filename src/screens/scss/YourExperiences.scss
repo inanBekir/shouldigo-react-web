@@ -1,0 +1,82 @@
+.your-experiences-content{
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+    flex-wrap: wrap;
+}
+.card-conta {
+    max-width: 300px;
+    height: 450px;
+    background: #222222;
+    margin: 1rem;
+    border-radius: 1rem;
+    transition: 0.3s;
+}
+.card-conta:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.card-conta img {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto 100%;
+    width: 100%;
+    height: 80%;
+}
+.loc-conta .MuiSvgIcon-root {
+    fill: #FAFAFA;
+}
+.card-conta p:first-child{
+    text-align: center;
+    text-transform: uppercase;
+    color: #FE5D26;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0;
+    padding: .5rem;
+}
+.loc-conta p {
+    text-align: center;
+    text-transform: capitalize;
+    color: #FE5D26;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+.loc-conta {
+    display: flex;
+    align-items: center;
+    margin: .4rem;
+}
+:root {
+    --rsbs-backdrop-bg: rgba(0, 0, 0, 0.6);
+    --rsbs-bg: #222;
+    --rsbs-handle-bg: hsla(0, 0%, 0%, 0.14);
+    --rsbs-max-w: auto;
+    --rsbs-ml: env(safe-area-inset-left);
+    --rsbs-mr: env(safe-area-inset-right);
+    --rsbs-overlay-rounded: 16px;
+  }
+.modal-btn-group {
+    display: flex;
+    flex-direction: column;
+}
+.modal-btn-group .MuiIconButton-root {
+    border-radius: 0;
+    border-bottom: 0.8px solid #000000;
+    color: #FE5D26;
+    font-weight: 600;
+    text-transform: capitalize;
+    transition: 0.3s;
+}
+#delete-btn {
+    border-radius: 0;
+    border-bottom: 0.8px solid #000000;
+    color: #D80032;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.modal-btn-group .MuiIconButton-root:hover {
+    transform: scale(1.2);
+}

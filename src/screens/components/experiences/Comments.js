@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import '../../scss/Comments.scss'
-import { db } from '../../../firebase/firebase.utils';
-import { Jumbotron, Image } from 'react-bootstrap';
+import { Jumbotron, Image, Dropdown } from 'react-bootstrap';
 import { useHistory } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import IconButton from '@material-ui/core/IconButton';
 import AddIcon from '@material-ui/icons/Add';
 import Tooltip from '@material-ui/core/Tooltip';
-import { GetProfile, GetComments, AddComment, GetExperience, UpdateExperienceCommentedCount } from './ItemService';
+import { GetProfile, GetComments, AddComment, GetExperience, UpdateExperienceCommentedCount, DeleteComment } from './ItemService';
 import {useDispatch, useSelector} from 'react-redux';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
+import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@material-ui/icons/Edit';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -70,17 +72,40 @@ function Comments(props) {
         getComments();
       };
 
+      const removeComment = (id) => {
+        DeleteComment(id);
+        setCounter(counter + 1);
+      };
+
       function CommentsList({ items }) {
         return items.map(item => (
             <Jumbotron key={item.key}>
                 <div className="comment-top-content">
-                    <Image src={item.comment_own_image} roundedCircle />
-                    <div className="name-date-content">
-                        <p>{userUID === item.comment_owner_id
-                        ? 'You'
-                        : item.comment_owner_name}</p>
-                        <p>{new Date(item.comment_date.toDate()).toDateString()}</p>
+                    <div className="top-left">
+                      <Image src={item.comment_own_image} roundedCircle />
+                      <div className="name-date-content">
+                          <p>{userUID === item.comment_owner_id
+                          ? 'You'
+                          : item.comment_owner_name}</p>
+                          <p>{new Date(item.comment_date.toDate()).toDateString()}</p>
+                      </div>
                     </div>
+                    <Dropdown>
+                    <Dropdown.Toggle className="more-button" id="dropdown-basic">
+                    <IconButton aria-label="settings">
+                      <MoreVertIcon />
+                    </IconButton>
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                      <div className="comment-btn-div">
+                          <Dropdown.Item href="/profile"> <EditIcon  />Edit</Dropdown.Item>
+                      </div>
+                      <div className="comment-btn-div">
+                          <Dropdown.Item onClick={() => { removeComment(item.key) }}> <DeleteIcon  />Delete</Dropdown.Item>
+                      </div>
+                    </Dropdown.Menu>
+                  </Dropdown>
                 </div>
                 <div className="comment-bottom-content"> 
                 <p>

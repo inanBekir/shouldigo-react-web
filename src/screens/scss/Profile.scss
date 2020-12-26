@@ -1,0 +1,70 @@
+.conta-profile {
+    margin-top: 6rem;
+    border: 1px solid #FE5D26;
+    border-radius: 10px;
+    background-color: #222222;
+    height: 450px;
+    padding: 1rem;
+}
+.left-img-div img {
+    border-radius: 5rem;
+    width: 10rem;
+    height: 10rem;
+    border: 1px solid #FE5D26;
+}
+.top-div {
+    display: flex;
+    justify-content: space-evenly;
+    height: 50%;
+}
+.right-content-inside {
+    display: flex;
+    align-items: center;
+}
+.conta-profile p {
+    margin:0;
+    padding: 0;
+}
+.conta-profile .orange-tag {
+    text-transform: capitalize;
+    margin-left: 5px;
+    font-weight: bold;
+    color: #FE5D26;
+    font-size: 1.1rem;
+}
+.conta-profile .bio-text {
+    text-transform: capitalize;
+    margin-left: 5px;
+    font-weight: 400;
+    color: #FAFAFA;
+    font-size: 1rem;
+}
+.bottom-div {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #FE5D26;
+    height: 50%;
+}
+.right-content-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.left-img-div {
+    align-items: center;
+    display: flex;
+}
+.bottom-div-inside {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+.bottom-div-inside2 {
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    align-items: flex-end;
+}
+.bottom-div-inside2 .MuiIconButton-root {
+    border: 2px solid #FE5D26;
+}

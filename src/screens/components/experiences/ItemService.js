@@ -156,3 +156,49 @@ const experienceLikesCollection = db.collection('Experience_likes');
       },
     });
   };
+
+  export function UpdateExperience(item, profile, userId) {
+    experiencesCollection.doc(item.key).update({
+      viewedCount: item.viewedCount + 1,
+  });
+}
+
+export const DeleteComment = (id) => {
+  commentCollection
+    .doc(id)
+    .delete()
+    .then(() => {
+    })
+    .catch((error) => {
+      throw new Error(error); // throw an Error
+    });
+};
+
+export const deleteExperience = (id) => {
+  experiencesCollection
+    .doc(id)
+    .delete()
+    .then(() => {
+      console.log('deleted');
+    })
+    .catch((error) => {
+      throw new Error(error); // throw an Error
+    });
+};
+
+export function GetAllYourExperiences(dispatch, page, userId) {
+  var experiencesSubCollection = experiencesCollection
+    .where('experience_owner_id', '==', userId)
+    .orderBy('createdAt', 'desc')
+    .limit(page);
+  experiencesSubCollection.get().then(function (querySnapshot) {
+    var experiences = [];
+    querySnapshot.forEach(function (documentSnapshot) {
+      experiences.push({
+        ...documentSnapshot.data(),
+        key: documentSnapshot.id,
+      });
+    });
+    dispatch(getAllYourExperiences(experiences));
+  });
+}

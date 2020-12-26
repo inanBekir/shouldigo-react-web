@@ -49,11 +49,20 @@
     color:#FE5D26;
     font-weight: 500;
     margin-left: 0.3rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 6.5rem;
 }
 .card-right-text{
     color:#FE5D26;
     font-weight: 500;
     margin-right: 0.3rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 6.5rem;
+    text-align: right;
 }
 .card-icons-content-row .MuiSvgIcon-root{
     color:#FAFAFA;
@@ -73,9 +82,17 @@
 .MuiCardActions-root{
     justify-content: space-between;
 }
+.slick-slider .slick-next, .slick-next, .slick-slider .slick-prev, .slick-prev {
+    color: rgba(255, 255, 255, 0.6);
+}
 .slick-next:focus, .slick-next:hover, .slick-prev:focus, .slick-prev:hover {
-    background-color: #1B2432;
     color: #FE5D26;
-    height: 100%;
-    border-radius: 0.5rem;
+    font-size: 2.4rem;
+}
+.slick-initialized .slick-slide{
+    display: flex;
+    justify-content: center;
+}
+.slick-prev {
+    left: -15px;
 }

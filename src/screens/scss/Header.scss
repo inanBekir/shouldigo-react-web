@@ -1,3 +1,11 @@
+@media only screen and (max-width: 992px) {
+    .navbar-light .navbar-toggler {
+        background-color: #FE5D26;
+    }
+    .navbar-collapse {
+        display: flex;
+     }
+  }
 .nav-link{
     padding: 0;
 }
@@ -22,6 +30,12 @@ navbar:not([data-scroll='0']) {
 }
 .dropdown a img{
     width: 3rem;
+    border: .1rem solid #FE5D26;
+    transition: 0.3s;
+}
+.dropdown a img:hover{
+    border: .1rem solid #FAFAFA;
+    transform: scale(1.1);
 }
 .dropdown-menu{
     right: 0;

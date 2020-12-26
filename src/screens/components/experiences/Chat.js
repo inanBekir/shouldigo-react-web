@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../scss/Chat.scss'
 import { useHistory } from "react-router-dom";
-import { ChatItem, Input, Button ,MessageList} from 'react-chat-elements'
+import { Input, Button ,MessageList} from 'react-chat-elements'
 import 'react-chat-elements/dist/main.css';
 import { db } from '../../../firebase/firebase.utils'
 import { GetProfile, AddMessage } from './ItemService';
