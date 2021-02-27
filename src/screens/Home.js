@@ -173,7 +173,7 @@ function Home() {
           />
           <CardMedia
             className={classes.media}
-            image={item.image}
+            image={item.images.url0}
           />
           <CardContent>
             <div className="card-icons-content-col">
@@ -182,7 +182,7 @@ function Home() {
                 <p className="card-left-text">{item.viewedCount} views</p>
               </div>
               <div className="card-icons-content-row">
-                <p className="card-right-text">{item.adress}</p>
+                <p className="card-right-text">{item.location.adress}</p>
                 <LocationOnIcon/>
               </div>
             </div>

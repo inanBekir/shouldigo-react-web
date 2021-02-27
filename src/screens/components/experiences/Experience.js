@@ -49,7 +49,14 @@ function TabPanel(props) {
     >
       {value === index && (
         <Box p={3}>
-          <Typography>{children}</Typography>
+         <Typography>
+         {value === 1 || value === 2?
+         <React.Fragment>
+          {children.map(tag => (
+            tag + ',  '
+          ))}
+      </React.Fragment> : children}
+      </Typography>
         </Box>
       )}
     </div>
@@ -215,7 +222,7 @@ function Experience(props) {
         getRated(id);
         getLiked(id);
         // eslint-disable-next-line react-hooks/exhaustive-deps
-      }, []);
+      }, [rate]);
 
       const getLiked = (experienceKey) => {
         experienceLikesCollection
@@ -265,7 +272,7 @@ function Experience(props) {
         </div>
         <div className="location-content">
                 <LocationOnIcon style={{ color: orange[900] }} fontSize="large" />
-                <p className="voting-text2">{experience.adress}</p>
+                <p className="voting-text2">{experience.location ? experience.location.adress : null}</p>
         </div>
         <div className="chat-content">
               <Tooltip title="Chat">
@@ -279,7 +286,7 @@ function Experience(props) {
             <Carousel.Item>
                 <img
                 className="d-block w-100 carousel-image"
-                src={experience.image}
+                src={experience.images ? experience.images.url0 : null}
                 alt={experience.name}
                 />
             </Carousel.Item>
@@ -371,14 +378,19 @@ function Experience(props) {
               >
                 <div style={modalStyle} className={classes.paper}>
                 <div className="modal-content-rate">
-                  <Rating
+                {experienceRatings.status ? <Rating
+                    size="large"
+                    name="simple-controlled"
+                    value={rate}
+                    readOnly
+                  /> : <Rating
                     size="large"
                     name="simple-controlled"
                     value={rate}
                     onChange={(event, newValue) => {
                       addRating(newValue);
                     }}
-                  />
+                  />}
                     <IconButton onClick={() => { handleClose() }} aria-label="cancel">
                           <p className="close-rate-text">{experienceRatings.status ? 'Ok' : 'Cancel'}</p>
                     </IconButton>
